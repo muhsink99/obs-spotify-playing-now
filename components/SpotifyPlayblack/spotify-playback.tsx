@@ -5,13 +5,13 @@ export default function SpotifyPlayback(playbackData: any) {
     return ( 
         <>
             <div className={styles.card}>
-                <img src={playbackData.data.item?.album?.images[1].url} alt="artists Cover" id="cover"/>
-                <h2 className={styles.card__title}> {playbackData.data.item?.name} </h2>
-                <span className={styles.card__artist}> {playbackData.data.item?.artists[0]?.name} </span>
+                <img src={playbackData.data.imgMedium} alt="artists Cover" id="cover"/>
+                <h2 className={styles.card__title}> {playbackData.data.songName} </h2>
+                <span className={styles.card__artist}> {playbackData.data.songArtist} </span>
                 <div className={styles.card__controllers}>
-                    <input type="range" value={playbackData.data?.progress_ms} max={playbackData.data.item?.duration_ms} id="tracker" />
-                    <span className={styles.card__controllers__time} id="current-time">{convertMillisecondsToTimestamp(playbackData.data?.progress_ms)}</span>
-                    <span className={styles.card__controllers__time} id="info-time">{convertMillisecondsToTimestamp(playbackData.data.item?.duration_ms)} </span>
+                    <input type="range" value={playbackData.data.progressMs} max={playbackData.data.durationMs} id="tracker" />
+                    <span className={styles.card__controllers__time} id="current-time">{convertMillisecondsToTimestamp(playbackData.data.progressMs)}</span>
+                    <span className={styles.card__controllers__time} id="info-time">{convertMillisecondsToTimestamp(playbackData.data.durationMs)} </span>
                 </div>
             </div>
         </>

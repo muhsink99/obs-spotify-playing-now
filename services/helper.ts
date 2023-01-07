@@ -40,8 +40,30 @@ function convertMillisecondsToTimestamp(ms: number) : string {
     );
 }
 
+/** 
+ * Transform the getPlayblackState api result into something more usuable 
+ * @param {Object} data 
+ * @return {Object} transformedResult  
+ */
+function transformGetPlaybackStateResult(playbackData: any) : Object {
+    if (playbackData === undefined) { 
+        return { }       
+    }
+
+    return { 
+        songName: playbackData?.data?.item?.name, 
+        songArtist: playbackData?.data?.item?.artists[0]?.name, 
+        progressMs: playbackData?.data?.progress_ms, 
+        durationMs: playbackData?.data.item?.duration_ms, 
+        imgLarge: playbackData?.data.item?.album?.images[0].url, 
+        imgMedium: playbackData?.data.item?.album?.images[1].url, 
+        imgSmall: playbackData?.data.item?.album?.images[2].url
+    } 
+}
+
 export { 
     generateRandomString, 
     getHostName, 
-    convertMillisecondsToTimestamp
+    convertMillisecondsToTimestamp, 
+    transformGetPlaybackStateResult
 }

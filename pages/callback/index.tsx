@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getPlaybackState } from "../api/spotify-api";
 import SpotifyPlayback from "../../components/SpotifyPlayblack/spotify-playback";
+import { transformGetPlaybackStateResult } from "../../services/helper";
 
 export default function Main() {
     const [playbackData, setPlaybackData] = useState<Object>({}); 
@@ -8,7 +9,7 @@ export default function Main() {
 
     const getCurrentPlayback = (accessToken: string) => getPlaybackState(accessToken).then((res) => {
         if (res?.status === 200) {
-            setPlaybackData(res.data); 
+            setPlaybackData(transformGetPlaybackStateResult(res)); 
         }
     })
 
