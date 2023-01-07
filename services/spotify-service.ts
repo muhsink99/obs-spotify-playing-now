@@ -6,9 +6,8 @@ import { getHostName, generateRandomString } from "./helper"
  */
 function authenticateWithSpotify(): void { 
     const clientId : any = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
-    const redirectUri = 'http://' + getHostName() + '/callback';
+    const redirectUri = getHostName() + '/callback';
     const state = generateRandomString(16); 
-    console.log(redirectUri);
     localStorage.setItem('spotify_auth_state', state); 
     const scope = 'user-read-private user-read-email user-read-playback-state user-read-currently-playing';
 
