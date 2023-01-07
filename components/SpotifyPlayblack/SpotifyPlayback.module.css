@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 .card *,
 .card *::before,
 .card *::after,
@@ -10,18 +12,19 @@
 .card {
   background: var(--card);
   width: 300px;
-  height: 400px;
+  height: 250px;
   border-radius: 32px;
   display: flex;
   align-items: center;
   flex-direction: column;
   transition: background 0.3s;
   padding: 16px 13px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .card img {
-  height: 248px;
-  width: 248px;
+  height: 120px;
+  width: 120px;
   border-radius: 20px;
   transition: transform 0.3s;
   object-fit: cover;
@@ -37,6 +40,10 @@
   color: var(--text);
   transition: color 0.3s;
   font-weight: 400;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 90%;
 }
 
 .card__artist {
@@ -45,6 +52,10 @@
   transition: color 0.3s;
   opacity: 0.6;
   font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 90%;
 }
 
 .card__controllers {
