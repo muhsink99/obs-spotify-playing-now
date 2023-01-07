@@ -13,7 +13,7 @@ export default function Home() {
         <li>Log into Spotify using the button below</li>
         <li>You&apos;ll be redirected to a new page, showing the song you&apos;re currently playing on Spotify. Keep a note of the entire URL</li>
         <li>Create a new &apos;Browser&apos; source on OBS. </li>
-        <li>Give this source a size of 300x400 and give it the URL you just kept a note of.</li>
+        <li>Give this source a size of 300x250 and give it the URL you just kept a note of.</li>
         <li>Move the Browser source to your desired position in your current scene.</li>
       </ol>
       <h3>Known Issues</h3>

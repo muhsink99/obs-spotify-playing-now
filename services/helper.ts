@@ -45,9 +45,9 @@ function convertMillisecondsToTimestamp(ms: number) : string {
  * @param {Object} data 
  * @return {Object} transformedResult  
  */
-function transformGetPlaybackStateResult(playbackData: any) : Object {
+function transformGetPlaybackStateResult(playbackData: any) : Object  {
     if (playbackData === undefined) { 
-        return { }       
+        return {}
     }
 
     return { 
