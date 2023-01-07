@@ -1,0 +1,98 @@
+.card *,
+.card *::before,
+.card *::after,
+.card {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  background: var(--card);
+  width: 300px;
+  height: 400px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: background 0.3s;
+  padding: 16px 13px;
+}
+
+.card img {
+  height: 248px;
+  width: 248px;
+  border-radius: 20px;
+  transition: transform 0.3s;
+  object-fit: cover;
+}
+
+.card img.anime {
+  animation: flip 0.4s;
+}
+
+.card__title {
+  margin-top: 20px;
+  font-size: 18px;
+  color: var(--text);
+  transition: color 0.3s;
+  font-weight: 400;
+  letter-spacing: 0.073em;
+}
+
+.card__artist {
+  margin-top: 2px;
+  color: var(--text);
+  transition: color 0.3s;
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.card__controllers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 16px;
+}
+
+.card__controllers input[type="range"] {
+  flex-basis: 100%;
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 5px;
+  background: #d8d8d8;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.card__controllers input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #8643ff;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.card__controllers input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.17);
+}
+
+.card__controllers input[type="range"]:focus {
+  outline: 3px dotted var(--outline);
+}
+
+.card__controllers__time {
+  opacity: 0.6;
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--text);
+  transition: color 0.3s;
+}

@@ -11,7 +11,17 @@ async function getPlaybackState(accessToken: string) : Promise<any> {
             'Authorization': 'Bearer ' + accessToken,
             'Content-type': 'application/json',
         }
-    });
+    }).catch(function (error: any) { 
+        if (error.response) {
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          } else if (error.request) {
+            console.log(error.request);
+          } else {
+            console.log('Error', error.message);
+          }
+    })
 
     return response; 
 }

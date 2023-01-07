@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { getPlaybackState } from "../api/spotify-api";
-import SpotifyPlayback from "../../components/spotify-playback";
+import SpotifyPlayback from "../../components/SpotifyPlayblack/spotify-playback";
 
 export default function Main() {
     const [playbackData, setPlaybackData] = useState<Object>({}); 
     const [accessToken, setAccessToken] = useState<string>("");
 
     const getCurrentPlayback = (accessToken: string) => getPlaybackState(accessToken).then((res) => {
-        if (res.status === 200) {
+        if (res?.status === 200) {
             setPlaybackData(res.data); 
             console.log(res.data); 
         }
