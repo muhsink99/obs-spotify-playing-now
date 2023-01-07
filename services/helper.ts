@@ -31,14 +31,13 @@ function getHostName() : string {
  * @return {string} H:s timestamp
  */
 function convertMillisecondsToTimestamp(ms: number) : string {
-    const seconds = ms / 1000;
-    const minutes = seconds / 60;  
-    const ratio = minutes % 1; 
-
-    const secondsString = parseInt(60*ratio) < 10 ? "0" + parseInt(60*ratio) : parseInt(60*ratio);
- 
-    const string =  parseInt(minutes) + ":" + secondsString;
-    return string;
+    var minutes = Math.floor(ms / 60000);
+    var seconds = ((ms % 60000) / 1000).toFixed(0);
+    return (
+        parseInt(seconds) === 60 ?
+        (minutes+1) + ":00" :
+        minutes + ":" + (parseInt(seconds) < 10 ? "0" : "") + seconds
+      );
 }
 
 export { 
