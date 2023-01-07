@@ -37,7 +37,7 @@ function convertMillisecondsToTimestamp(ms: number) : string {
         parseInt(seconds) === 60 ?
         (minutes+1) + ":00" :
         minutes + ":" + (parseInt(seconds) < 10 ? "0" : "") + seconds
-      );
+    );
 }
 
 export { 

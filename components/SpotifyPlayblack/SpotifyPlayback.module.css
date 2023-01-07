@@ -37,7 +37,6 @@
   color: var(--text);
   transition: color 0.3s;
   font-weight: 400;
-  letter-spacing: 0.073em;
 }
 
 .card__artist {

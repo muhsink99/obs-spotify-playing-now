@@ -9,7 +9,6 @@ export default function Main() {
     const getCurrentPlayback = (accessToken: string) => getPlaybackState(accessToken).then((res) => {
         if (res?.status === 200) {
             setPlaybackData(res.data); 
-            console.log(res.data); 
         }
     })
 
