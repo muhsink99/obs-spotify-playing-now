@@ -72,7 +72,18 @@
   transition: opacity 0.2s;
 }
 
-.card__controllers input[type="range"]::-webkit-slider-thumb,
+.card__controllers input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #8643ff;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+}
+
 .card__controllers input[type="range"]::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
