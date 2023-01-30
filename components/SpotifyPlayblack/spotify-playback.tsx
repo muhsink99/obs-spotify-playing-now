@@ -1,5 +1,5 @@
 import { convertMillisecondsToTimestamp } from "../../services/helper"
-import styles from './SpotifyPlayback.module.css';
+import styles from './SpotifyPlayback.module.scss';
 const _ = require('lodash');
 
 export default function SpotifyPlayback(playbackData: any) {
